@@ -15,6 +15,7 @@
     <script defer src="js/background.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/weather.js"></script>
+    <script defer src="js/darkmode.js"></script>
 </head>
 <body>
     <h1 id="greeting" class="hidden"></h1>
@@ -40,6 +41,16 @@
         <span></span>
         <span></span>
     </div>
+
+    <!-- 배경 이미지 -->
+    <div id="bgImage"></div>
+
+    <!-- 라이트 모드와 다크 모드를 구분하는 레이어 -->
+    <div id="overlay"></div>
+
+    <!-- 다크 모드 -->
+    <span class="darkmode-btn" id="darkmode-btn"></span>
+
    <!-- <a href="https://nomadcoders.co">Go to courses</a>-->
 </body>
 </html>
