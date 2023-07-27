@@ -3,12 +3,13 @@
 // 핵심기능: array에서 랜덤한 숫자를 얻어 숫자에 따른 이미지를 body에 추가함
 
 const images = [
-    "1.jpg", "2.jpg", "3.jpg",
-];
+    "1.jpg", "2.jpg", "3.jpg", "4.jpg"
+]
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
 const bgImage = new Image();
+
 bgImage.onload = function() {
     const imageRatio = bgImage.width / bgImage.height;
     const screenRatio = window.innerWidth / window.innerHeight;
@@ -24,4 +25,17 @@ bgImage.onload = function() {
     bgImage.id = 'bgImage';
     document.body.appendChild(bgImage);
 };
+
 bgImage.src = `img/${chosenImage}`;
+
+document.getElementById("imagebutton").addEventListener("click", changeImage);
+
+function changeImage() {
+
+    chosenImages = images[Math.floor(Math.random() * images.length)];
+
+    bgImage.src = `img/${chosenImages}`;
+
+    document.body.appendChild(bgImage);
+    document.body.replaceChild(bgImage);
+}
