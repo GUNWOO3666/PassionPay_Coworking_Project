@@ -26,10 +26,10 @@ body{
     
     z-index: -1;
 }
+
 :root {
     --brightness: 100%;
 }
-
 
 #bgImage{
     position:absolute;
