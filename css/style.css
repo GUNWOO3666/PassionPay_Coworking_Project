@@ -10,6 +10,24 @@
 body{
     padding-top:300px;
     font-family: 'Baloo Tammudu 2', 'Noto Sans KR', sans-serif;
+    
+    filter: brightness(var(--brightness));
+    
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('1.jpg');
+    background-size: cover;
+    
+    z-index: -1;
+}
+:root {
+    --brightness: 100%;
 }
 
 
@@ -28,7 +46,7 @@ body{
 
 #imagebutton {
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 20px;
     font-family: 'Arial';
     background-color: rgba(255, 255, 255, 0.5);
@@ -41,6 +59,24 @@ body{
     border-radius: 5px;
     text-align: center;
 
+}
+
+#brightenessbutton {
+    position: fixed;
+    width: 90px;
+    height: 24px;
+    top: 70px;
+    left: 21px;
+    font-family: 'Arial';
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1px 21px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 #login-form{
