@@ -48,13 +48,30 @@ const setButtonLabel = (currentSetting) => {
   darkmodeBtn.innerText = currentSetting === "dark" ? "☀" : "☾";
 };
 
-// 다크 모드 버튼 클릭 이벤트 설정
-darkmodeBtn.addEventListener("click", (evt) => {
+// 라이트 모드와 다크 모드를 전환하는 함수
+const toggleDarkMode = () => {
+  let currentSetting = localStorage.getItem(STORAGE_KEY);
+
+  // 현재 설정이 'dark'인지 'light'인지 확인하고 전환
+  if (currentSetting === 'dark') {
+    currentSetting = 'light';
+  } else {
+    currentSetting = 'dark';
+  }
+
+  // 변경된 설정을 로컬 스토리지에 저장
+  localStorage.setItem(STORAGE_KEY, currentSetting);
+
+  // 변경된 설정 적용
+  applySetting(currentSetting);
+};
+
+// 다크 모드 버튼 클릭 이벤트 리스너
+darkmodeBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
 
-  // 설정 변경 후 적용
-  const currentSetting = toggleSetting();
-  applySetting(currentSetting);
+  // 다크 모드 설정 전환
+  toggleDarkMode();
 });
 
 // 초기 설정 적용 (로컬 스토리지에 저장된 값이 없을 경우 "light"로 시작)
