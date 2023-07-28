@@ -15,6 +15,7 @@
     <script defer src="js/background.js"></script>
     <script defer src="js/todo.js"></script>
     <script defer src="js/weather.js"></script>
+    <script defer src="js/darkmode.js"></script>
     <script defer src="js/calendar.js"></script>
     <script defer src="js/brightness.js"></script>
 </head>
@@ -22,7 +23,7 @@
     <h1 id="greeting" class="hidden"></h1>
     <form class="hidden" id="login-form">
         <input required maxlength="15" type="text" placeholder="What is your name?">
-        <input type="submit" value="Log In">
+        <input type="submit" value="Login">
     </form>
     <!--html 자체 input 유효성 결과를 확인하기 위해서는 꼭 form 태그 안에 input을 사용해야함!
     But, Submit시 페이지가 재시작(refresh) 됨-->
@@ -42,6 +43,10 @@
         <span></span>
         <span></span>
     </div>
+
+
+    <!-- 다크 모드 -->
+    <span class="darkmode-btn" id="darkmode-btn"></span>
 
     <!-- "count d-day" 버튼 -->
     <button id="countButton">count D-day</button>
@@ -67,6 +72,7 @@
 
     
     <div id="result"></div>
+
    <!-- <a href="https://nomadcoders.co">Go to courses</a>-->
 </body>
 </html>
