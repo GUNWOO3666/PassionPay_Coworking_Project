@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 
-WORKDIR /app/pptest
+WORKDIR /app/WebClock_docker_toy
 
 COPY . .
 
@@ -16,4 +16,4 @@ RUN chmod +x entrypoint.sh
 
 EXPOSE 8080
 
-ENTRYPOINT [ "sh", "-c", "./entrypoint.sh & tail -f /dev/null"]
+ENTRYPOINT [ "sh", "-c", "./entrypoint.sh & tail -f /dev/null" ]

@@ -10,7 +10,11 @@
 body{
     padding-top:300px;
     font-family: 'Baloo Tammudu 2', 'Noto Sans KR', sans-serif;
+    
+    filter: brightness(var(--brightness));
+    
 }
+
 
 /* 다크 모드 스타일 */
 :root {
@@ -42,10 +46,28 @@ body{
     opacity: .7;
   }
 
+#background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('1.jpg');
+    background-size: cover;
+    
+    z-index: -1;
+}
+
+:root {
+    --brightness: 100%;
+}
+
+
 #bgImage{
     position:absolute;
     left:0;
     top:0;
+
 	max-width:100%;
     min-width:1880px;;
     max-height:1400px;
@@ -54,6 +76,50 @@ body{
     opacity: var(--opacity);
     filter: var(--filter);
 
+
+	width:100%;
+
+    height:1400px;
+
+    object-fit: cover;
+    z-index:-5;
+    filter: brightness(30%);
+
+}
+
+#imagebutton {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    font-family: 'Arial';
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+#brightenessbutton {
+    position: fixed;
+    width: 90px;
+    height: 24px;
+    top: 70px;
+    left: 21px;
+    font-family: 'Arial';
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1px 21px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 #login-form{
@@ -201,3 +267,104 @@ body{
         color:rgb(255, 166, 0);
     }
 
+
+/* 디데이 계산기 스타일 */
+#countButton {
+    position: fixed;
+    top: 45px;
+    right: 20px;
+    font-family: 'Baloo Tammudu 2', sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.5px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#countButton:hover {
+    background-color: rgb(255, 166, 0);
+}
+  
+#calendar { /* D-day 계산기(제목) */
+    position: fixed;
+    top: 40px;
+    right: 23px;
+    font-family: 'Baloo Tammudu 2', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    color:rgba(255,255,255,0.8);
+    margin: 10px;
+}
+
+#dateForm {
+    position: fixed;
+    top: 92px;
+    right: 350px;
+    text-align: center;
+    margin: 10px;
+    color:rgba(255,255,255,0.8);
+    
+}
+
+#targetDate { /* 2023-00-00 부분 */
+    position: fixed;
+    top: 90px;
+    right: 200px;
+    padding: 5px;
+    font-size: 1rem;
+    margin: 5px;
+    border: 4px solid rgba(255, 255, 255, 0.5); /* 둥근 사각형 테두리 */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#dateForm button { 
+    position: fixed;
+    top: 95px;
+    right: 80px;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0px 3px;
+    
+    
+}
+
+
+#dateForm button:hover {
+    background-color: rgb(255, 166, 0);
+}
+
+#result { /* D-day 결과 */
+    position: fixed;
+    top: 120px;
+    right: 40px;
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.781);
+}
+
+#resetButton {
+    right: 14px !important;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 7.5px 14.5px; /* 버튼 내부 여백 설정 */
+    cursor: pointer;
+}
+
+#resetButton:hover {
+    background-color: #19e263;
+}
